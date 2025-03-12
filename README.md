@@ -1,4 +1,19 @@
-    * {
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXOVA DIGITAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --blue-pastel: #a6d8f5;
+            --gray-pastel: #a1a1a1;
+            --dark-gray: #555555;
+        }
+        
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
