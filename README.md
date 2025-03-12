@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    #<title>NEXOVA DIGITAL</title>
+    <title>NEXOVA DIGITAL</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -100,8 +100,60 @@
         }
 
         .service-card:active {
-            transform: scale(1.1);
-            box-shadow: 0 20px 40px rgba(166, 216, 245, 0.4);
+            animation: bounce 0.5s;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .service-details {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+            animation: bounceDown 0.5s forwards;
+        }
+
+        @keyframes bounceDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            60% {
+                opacity: 1;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            60% {
+                opacity: 1;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+
+        .service-details p {
+            margin: 5px 0;
         }
         
         .service-card h3 {
@@ -248,6 +300,7 @@
         .testimonial {
             position: relative;
             margin-bottom: 30px;
+            animation: bounceDown 0.5s forwards;
         }
 
         .testimonial p {
@@ -366,7 +419,7 @@
         </header>
         
         <div class="services">
-            <div class="service-card" id="card1">
+            <div class="service-card" id="card1" onclick="toggleDetails('details1')">
                 <div class="icon">
                     <i class="fas fa-file-code"></i>
                 </div>
@@ -376,9 +429,15 @@
                     <img src="paginaweb.imagen.jpeg" alt="Custom Face Socks" style="width: 100%; height: 100%; object-fit: cover; border-radius: 5px;">
                 </div>
                 <p class="price">Desde 100€-300€</p>
+                <div class="service-details" id="details1">
+                    <p><strong>Precio:</strong> Desde 100€ a 300€</p>
+                    <p><strong>Incluye:</strong> Landing page o página sencilla</p>
+                    <p><strong>Ideal para:</strong> Profesionales independientes o pequeños negocios que necesitan una presencia online básica</p>
+                    <p><strong>Características:</strong> Una sola página con información esencial, diseño responsive</p>
+                </div>
             </div>
             
-            <div class="service-card" id="card2">
+            <div class="service-card" id="card2" onclick="toggleDetails('details2')">
                 <div class="icon">
                     <i class="fas fa-sitemap"></i>
                 </div>
@@ -388,9 +447,15 @@
                     <img src="sitioweb.imagen" alt="Custom Face Socks" style="width: 100%; height: 100%; object-fit: cover; border-radius: 5px;">
                 </div>
                 <p class="price">Desde 300€-500€</p>
+                <div class="service-details" id="details2">
+                    <p><strong>Precio:</strong> Desde 300€ a 500€</p>
+                    <p><strong>Incluye:</strong> Hasta 5 páginas de contenido</p>
+                    <p><strong>Ideal para:</strong> Pequeñas empresas o proyectos personales que requieren múltiples secciones</p>
+                    <p><strong>Características:</strong> Múltiples páginas, navegación entre secciones, diseño personalizado</p>
+                </div>
             </div>
             
-            <div class="service-card" id="card3">
+            <div class="service-card" id="card3" onclick="toggleDetails('details3')">
                 <div class="icon">
                     <i class="fas fa-mobile-alt"></i>
                 </div>
@@ -400,9 +465,15 @@
                     <img src="appweb.imagen" alt="Custom Face Socks" style="width: 100%; height: 100%; object-fit: cover; border-radius: 5px;">
                 </div>
                 <p class="price">Desde 400€-600€</p>
+                <div class="service-details" id="details3">
+                    <p><strong>Precio:</strong> Desde 400€ a 600€</p>
+                    <p><strong>Incluye:</strong> Aplicación web con funcionalidades básicas</p>
+                    <p><strong>Ideal para:</strong> Negocios que necesitan alguna funcionalidad interactiva específica</p>
+                    <p><strong>Características:</strong> Funciones interactivas, posibilidad de gestión de datos básica</p>
+                </div>
             </div>
 
-            <div class="service-card" id="card4">
+            <div class="service-card" id="card4" onclick="toggleDetails('details4')">
                 <div class="icon">
                     <i class="fas fa-tools"></i>
                 </div>
@@ -412,9 +483,15 @@
                     <img src="mantenimiento.imagen" alt="Mantenimiento Mensual" style="width: 100%; height: 100%; object-fit: cover; border-radius: 5px;">
                 </div>
                 <p class="price">80€</p>
+                <div class="service-details" id="details4">
+                    <p><strong>Precio:</strong> 80€ mensuales</p>
+                    <p><strong>Incluye:</strong> Servicio de mantenimiento y actualización del sitio web</p>
+                    <p><strong>Ideal para:</strong> Cualquier cliente que desee mantener su web actualizada y segura</p>
+                    <p><strong>Características:</strong> Actualizaciones de seguridad, modificaciones menores, resolución de problemas técnicos</p>
+                </div>
             </div>
             
-            <div class="service-card" id="card5">
+            <div class="service-card" id="card5" onclick="toggleDetails('details5')">
                 <div class="icon">
                     <i class="fas fa-redo"></i>
                 </div>
@@ -424,13 +501,18 @@
                     <img src="rediseño.imagen" alt="Rediseño de Página" style="width: 100%; height: 100%; object-fit: cover; border-radius: 5px;">
                 </div>
                 <p class="price">250€</p>
+                <div class="service-details" id="details5">
+                    <p><strong>Precio:</strong> 250€</p>
+                    <p><strong>Incluye:</strong> Actualización del diseño para una apariencia más moderna</p>
+                    <p><strong>Ideal para:</strong> Sitios web existentes que necesitan renovar su imagen</p>
+                    <p><strong>Características:</strong> Nuevo diseño visual, mejora de la experiencia de usuario, manteniendo la estructura de contenido</p>
+                </div>
             </div>
         </div>
         
         <div class="cta">
             <h3>¡Haz crecer tu negocio online hoy mismo!</h3>
             <p>Da el primer paso hacia una presencia online profesional y atractiva.</p>
-            <a href="#" class="cta-button">Contacta para más información</a>
         </div>
 
         <button class="testimonials-button" onclick="toggleTestimonials()">Testimonios de Clientes</button>
@@ -447,13 +529,12 @@
                 </div>
             </div>
             <div class="testimonial">
-                <p><strong>calidad-precio/strong></p>
+                <p><strong>calidad-precio</strong></p>
                 <p>"Buena relación calidad-precio. Recomendado."</p>
                 <div class="stars">
                     ★★★★★
                 </div>
                 <div class="edit-delete-buttons">
-                   
                     <button onclick="deleteTestimonial(this)">Eliminar</button>
                 </div>
             </div>
@@ -501,7 +582,6 @@
             
             imagePlaceholders.forEach(placeholder => {
                 placeholder.addEventListener('click', function() {
-                    alert('Aquí podrías implementar un selector de imágenes para que el usuario pueda subir sus propias imágenes.');
                 });
             });
         });
@@ -547,8 +627,22 @@
                     <button onclick="deleteTestimonial(this)">Eliminar</button>
                 </div>
             `;
+            testimonialContainer.style.animation = 'bounceDown 0.5s forwards';
             document.querySelector('.testimonials').appendChild(testimonialContainer);
             form.reset();
+        }
+
+        function toggleDetails(detailsId) {
+            const details = document.getElementById(detailsId);
+            if (details.style.display === 'none' || details.style.display === '') {
+                details.style.display = 'block';
+                details.style.animation = 'bounceDown 0.5s forwards';
+            } else {
+                details.style.animation = 'bounceUp 0.5s forwards';
+                setTimeout(() => {
+                    details.style.display = 'none';
+                }, 500);
+            }
         }
     </script>
 </body>
